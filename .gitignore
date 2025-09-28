@@ -1,0 +1,61 @@
+# --- OS files ---
+.DS_Store
+Thumbs.db
+
+# --- Logs ---
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# --- Dependencies ---
+node_modules/
+bower_components/
+
+# --- Python ---
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pdb
+*.egg-info/
+.env
+env/
+venv/
+ENV/
+
+# --- Build outputs ---
+build/
+dist/
+out/
+target/
+*.class
+*.o
+*.so
+*.dll
+
+# --- IDEs / Editors ---
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# --- Test / Coverage ---
+coverage/
+*.lcov
+
+# --- Docker ---
+docker-compose.override.yml
+
+# --- Terraform ---
+.terraform/
+*.tfstate
+*.tfstate.backup
+
+# --- Misc ---
+*.tmp
+*.swp
+*.swo
+*.bak
+*.orig
