@@ -1,7 +1,3 @@
-# Default values for helm-chart.
-# This is a YAML-formatted file.
-# Declare variables to be passed into your templates.
-
 # This will set the replicaset count more information can be found here: https://kubernetes.io/docs/concepts/workloads/controllers/replicaset/
 replicaCount: 1
 
@@ -13,7 +9,8 @@ image:
   # Overrides the image tag whose default is the chart appVersion.
   tag: "0.1.0"
 
-# This environment variable is expected by the application. Defaults to http://localhost
+# This environment variable is expected by the application. URLs for check should be in comma-separated
+# format. As an example: "https://google.com,https://google.com/400". Defaults value is http://localhost
 env:
   - name: URLS
     value: "https://google.com,https://google.com/400"

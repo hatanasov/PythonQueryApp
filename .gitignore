@@ -59,3 +59,6 @@ docker-compose.override.yml
 *.swo
 *.bak
 *.orig
+
+# --- pre-commit-config.yaml for helm-docs ---
+*.pre-commit-config.yaml
