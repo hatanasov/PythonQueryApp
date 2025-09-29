@@ -1,7 +1,9 @@
 # This will set the replicaset count more information can be found here: https://kubernetes.io/docs/concepts/workloads/controllers/replicaset/
+# @param replicaCount represents how many pods from are required
 replicaCount: 1
 
 # This sets the container image more information can be found here: https://kubernetes.io/docs/concepts/containers/images/
+#@section image The image, policy and tag (version) of the application
 image:
   repository: hristoatanasov87/url_check_app_arm64
   # This sets the pull policy for images.
@@ -11,16 +13,19 @@ image:
 
 # This environment variable is expected by the application. URLs for check should be in comma-separated
 # format. As an example: "https://google.com,https://google.com/400". Defaults value is http://localhost
+# @param env Expects the "URLS" environment variable and the value should be string with comma-separated urls
 env:
   - name: URLS
     value: "https://google.com,https://google.com/400"
 
 # This is to override the chart name.
+
 nameOverride: ""
 fullnameOverride: ""
 
 # This is for setting Kubernetes Annotations to a Pod.
 # For more information checkout: https://kubernetes.io/docs/concepts/overview/working-with-objects/annotations/
+
 podAnnotations: {}
 # This is for setting Kubernetes Labels to a Pod.
 # For more information checkout: https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/
@@ -38,6 +43,7 @@ securityContext: {}
   # runAsUser: 1000
 
 # This is for setting up a service more information can be found here: https://kubernetes.io/docs/concepts/services-networking/service/
+# @section service Esposes the application as a k8s service
 service:
   # This sets the service type more information can be found here: https://kubernetes.io/docs/concepts/services-networking/service/#publishing-services-service-types
   type: ClusterIP
@@ -47,6 +53,8 @@ service:
   targetPort: 9100
 
 # This block is for setting up the ingress for more information can be found here: https://kubernetes.io/docs/concepts/services-networking/ingress/
+
+# @section ingress Ingress kubernetes object configuration.
 ingress:
   enabled: false
   className: ""
@@ -63,6 +71,7 @@ ingress:
   #    hosts:
   #      - chart-example.local
 
+# @section resources Resource limits can be applied if required
 resources: {}
   # We usually recommend not to specify default resources and to leave this as a conscious
   # choice for the user. This also increases chances charts run on environments with little
