@@ -1,0 +1,6 @@
+apiVersion: v2
+name: python-query-app
+description: Install a python-query-app which checks URL for availability and response time 
+type: application
+version: 0.1.0
+appVersion: "0.1.0"
