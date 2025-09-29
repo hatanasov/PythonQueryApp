@@ -1,9 +1,9 @@
 # This will set the replicaset count more information can be found here: https://kubernetes.io/docs/concepts/workloads/controllers/replicaset/
-# @param replicaCount represents how many pods from are required
+# --- replicaCount represents how many pods from are required
 replicaCount: 1
 
 # This sets the container image more information can be found here: https://kubernetes.io/docs/concepts/containers/images/
-#@section image The image, policy and tag (version) of the application
+# --- The image, policy and tag (version) of the application
 image:
   repository: hristoatanasov87/url_check_app_arm64
   # This sets the pull policy for images.
