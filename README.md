@@ -49,13 +49,16 @@ docker run -p 9100:9100 -e URLS="https://google.com,https://httpstat.us/503" pyt
 
 ```bash
 # Install chart
-helm install my-app helm-chart/
+helm repo add my-app-repo https://hatanasov.github.io/PythonQueryApp/
 
-# Or from packaged chart
-helm install my-app python-query-app-0.1.0.tgz
+# search for the package in the repo
+helm search repo python-query-app
 
-# Custom URLs
-helm install my-app helm-chart/ --set env[0].value="https://example.com,https://api.example.com"
+# Install from repo
+helm install quert-app python-query-app/python-query-app
+
+# or provide custom values file
+helm install quert-app python-query-app/python-query-app -f values.yaml 
 ```
 
 ## Configuration
